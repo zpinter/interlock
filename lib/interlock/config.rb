@@ -109,6 +109,7 @@ module Interlock
           include Interlock::Lock
 
           def read(*args)
+            raise "RAILS_ENV is #{RAILS_ENV}"
             get args.first.to_s
           end
 
